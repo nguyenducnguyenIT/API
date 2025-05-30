@@ -1,10 +1,11 @@
 services:
   - type: web
     name: hello-nest
-    runtime: node
+    env: node
+    plan: free
     region: singapore
-    buildCommand: npm install && npm run build
-    startCommand: npm run start:prod
+    buildCommand: yarn install && yarn build
+    startCommand: node dist/main
     envVars:
       - key: NODE_ENV
         value: production
